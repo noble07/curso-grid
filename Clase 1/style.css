@@ -1,0 +1,33 @@
+main {
+  height: 100vh;
+  /* Se establece el contenedor main como un Grid container */
+  display: grid;
+  /* Añade un espacio entre las filas y las columnas, igual acepta dos valores <'row-gap'> <'column-gap'> */
+  gap: 10px;
+  /* Defiene las columnas en nuestro grid */
+  grid-template-columns: auto auto auto auto; /* auto divide la cantidad de columnas de manera automatica */
+  /* grid-template-columns: 1fr 3fr 1fr; fr: distribuye en manera de fracciones el contenido de nuestro grid */
+  /* La distribución queda de la siguiente manera: 1/5 3/5 1/5 */
+  grid-template-rows: auto auto auto; /* Los mismo que se aplico a las columnas aplica a las filas */
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+div:nth-child(10) {
+  background-color: yellowgreen;
+  /* Determina el tamaño del item dentro del grid recive dos parametros separados por / */
+  /* 'grid-column-start' / 'grid-column-end'. Recive tanto valores positvos como negativos*/
+  grid-column: 3 / -1;
+}
+
+div:nth-child(6) {
+  background-color: bisque;
+  grid-column: 2;
+  /* Determina le tamaño de la fila al giual que el grid-column */
+  grid-row: 2 / -1;
+}
