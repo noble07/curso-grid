@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  /* Añadimos el espacio entre las columnas y las filas */
+  gap: 30px 15px;
+  /* Definimos las columnas y filas con son respectivas medidas */
+  /* La función repeat recibe dos argumentos (# de veces a repetir, medida) */
+  /* De esta manera evitamos estar copiando varias veces lo mismo */
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  /* Define el tamaño del grid track que sea generado de manera implicita */
+  grid-auto-rows: 1fr;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+  color: white;
+}
