@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  gap: 10px;
+
+  grid-template:
+  /* Se le asigna nombres a las grid lines */
+    /* Se nombran todas las filas de nuestro grid */
+    [header-start] 1fr
+    [header-end contenido-start] 2fr
+    [contenido-end footer-start] 1fr
+    [footer-end] /
+    /* Se nombran todas las columnas de nuestro grid */
+    [sidebar-start] 1fr
+    [sidebar-end contenido-start] 2fr
+    [contenido-end];
+}
+
+main > * {
+  font-family: sans-serif;
+  background: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Se asigna las columns y los rows con los nombres asignados previmanete */
+
+/* article {
+  grid-column: contenido-start;
+} */
+
+/* footer {
+  grid-column: contenido-start;
+} */
+
+header {
+  grid-area: header-start / sidebar-start / header-end / contenido-end;
+}
+
+aside {
+  grid-area: contenido-start / sidebar-start / footer-end / sidebar-end;
+}
+
+article {
+  grid-area: contenido-start / contenido-start / contenido-end / contenido-end;
+}
+
+footer {
+  grid-area: footer-start / contenido-start / footer-end / contenido-end;
+}
